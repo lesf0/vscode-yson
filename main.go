@@ -18,7 +18,7 @@ func formatYsonWrapper(pretty bool) js.Func {
 
         if pretty {
             formatter := formatter.NewYsonFormatter(4, true, false, "")
-            return formatter.Dump(data)
+            return formatter.Dump(data) + "\n"
         } else {
             bytes, err := yson.MarshalFormat(&data, yson.FormatText)
 
